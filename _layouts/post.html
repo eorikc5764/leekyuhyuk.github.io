@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="article appear">
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
+    <div class="article-list-footer">
+      <span class="article-list-date">{{ page.date }}</span>
+      <span class="article-list-divider">-</span>
+      <div class="article-list-tags">
+        <a href="/category/{{ page.category | slugify | prepend: site.baseurl }}.html" rel="category">{{ page.category | replace:'-', ' ' }}</a>
+      </div>
+    </div>
+  </header>
+  {{ content }}
+</article>

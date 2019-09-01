@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<br>
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+<a href="/category/{{ category | first | slugify | prepend: site.baseurl }}.html" class="disable-button">
+  {{ category[0] | replace:'-', ' ' }} <b>({{ category | last | size }})</b>
+</a>
+{% endfor %}

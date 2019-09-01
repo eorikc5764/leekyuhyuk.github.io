@@ -1,0 +1,14 @@
+# Site settings
+title: KyuDevelop
+email: lee@kyuhyuk.kr
+description: KyuHyuk Lee Blog
+baseurl: ""
+permalink: /article/:categories/:year/:month/:day/:title
+url: "https://kyuhyuk.kr"
+facebook_username: LeeKyuHyuk
+twitter_username: LeeKyuHyuk
+github_username:  LeeKyuHyuk
+generator:  KyuHyuk Lee
+
+# Build settings
+markdown: kramdown
