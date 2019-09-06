@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /category/
+Sitemap: http://kyuhyuk.kr/sitemap.xml
