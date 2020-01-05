@@ -2,7 +2,7 @@
 layout  : post
 title   : "[C#] Hello, World!"
 date    : 2020-01-05 16:15:51 +0900
-category: C#
+category: C-Sharp
 ---
 Visual Studio Community 2019를 실행하고, '새 프로젝트 만들기(N)'을 클릭합니다.  
 ![]({{ site.url }}/assets/image/2020-01-05-C-Sharp-Hello-World/2020-01-05-C-Sharp-Hello-World_1.png)
