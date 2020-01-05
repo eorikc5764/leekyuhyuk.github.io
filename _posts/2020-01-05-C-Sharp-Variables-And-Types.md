@@ -2,7 +2,7 @@
 layout  : post
 title   : "[C#] 자료형과 변수, 상수"
 date    : 2020-01-05 18:10:21 +0900
-category: C#
+category: C-Sharp
 ---
 
 # 기본 자료형
