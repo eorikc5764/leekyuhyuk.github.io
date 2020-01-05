@@ -13,5 +13,5 @@ category: C-Sharp
 설치가 완료되면, 시작에 있는 'Visual Studio 2019'를 클릭하여 실행합니다.  
 ![Run Visual Studio Community]({{ site.url }}/assets/image/2020-01-05-C-Sharp-Environment-Setting/2020-01-05-C-Sharp-Environment-Setting_3.png)
 
-이제 C# 프로그래밍을 시작할 준비가 다 되었습니다.
+이제 C# 프로그래밍을 시작할 준비가 다 되었습니다.  
 ![Visual Studio Community]({{ site.url }}/assets/image/2020-01-05-C-Sharp-Environment-Setting/2020-01-05-C-Sharp-Environment-Setting_4.png)
