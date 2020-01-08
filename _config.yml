@@ -2,9 +2,9 @@ title: KyuDevelop
 author: KyuHyuk Lee
 email: lee@kyuhyuk.kr
 description: > # this means to ignore newlines until "show_excerpts:"
- 생활에서 불편하거나 필요한 것을 만들거나 해결하는 것을 좋아합니다.
- 이러한 활동으로 성취감을 느끼고 더 좋은 품질의 소프트웨어를 개발하기 위하여 실력을 쌓아가고 있습니다.
- 전문적인 소프트웨어 개발자가 되어 많은 사람들에게 편한 삶을 안겨주는 게 제 꿈입니다.
+#  생활에서 불편하거나 필요한 것을 만들거나 해결하는 것을 좋아합니다.
+#  이러한 활동으로 성취감을 느끼고 더 좋은 품질의 소프트웨어를 개발하기 위하여 실력을 쌓아가고 있습니다.
+#  전문적인 소프트웨어 개발자가 되어 많은 사람들에게 편한 삶을 안겨주는 게 제 꿈입니다.
 permalink: /article/:categories/:year/:month/:day/:title
 show_excerpts: false # set to true to show excerpts on the homepage
 google_analytics: UA-61796050-1
