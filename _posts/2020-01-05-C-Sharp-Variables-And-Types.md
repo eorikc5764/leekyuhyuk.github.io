@@ -316,7 +316,7 @@ False
 931004
 ```
 
-# `var` Keyword
+# 'var' Keyword
 
 `var`을 사용하면 자료형을 알아서 자동으로 선언할 수 있습니다.  
 

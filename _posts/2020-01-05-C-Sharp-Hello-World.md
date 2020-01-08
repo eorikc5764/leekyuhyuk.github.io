@@ -54,7 +54,7 @@ namespace FirstCSharp
 이제 '명령 프롬프트'에서 실행해봅시다. 해당 폴더로 이동하여 `HelloWorld.exe`를 실행합니다.  
 ![]({{ site.url }}/assets/image/2020-01-05-C-Sharp-Hello-World/2020-01-05-C-Sharp-Hello-World_8.png)
 
-# `using` 지시자
+# 'using' 지시자
 
 `using System;`은 `System` 네임스페이스에 있는 클래스를 사용한다는 뜻입니다.  
 만약 `using System;`을 입력하지 않는다면, 아래와 같은 코드를 사용하게 됩니다.  
@@ -81,7 +81,7 @@ namespace FirstCSharp
 `using static System.Console;`은 위에서 설명한 `using System;`와 같습니다. `Console.WriteLine()`을 `WriteLine()`으로 줄여주는 역활을 합니다.  
 `using` 지시자만 사용하면, 네임스페이스 전체를 사용한다는 뜻이지만, `using static`은 해당 클래스의 이름을 명시하지 않고 사용하겠다는 뜻입니다.
 
-# 네임스페이스(`namespace`)
+# 네임스페이스('namespace')
 
 네임스페이스는 작업하는게 비슷한 클래스, 구조체, 인터페이스 등을 하나의 네임스페이스로 묶는 역활을 합니다.  
 아래와 같이 사용이 가능합니다. 자세한 것은 뒤에서 다루도록 하겠습니다.
@@ -95,11 +95,11 @@ namespace 네임스페이스 이름
 }
 ```
 
-# 클래스(`Class`)
+# 클래스(Class)
 
 클래스는 프로그램을 구성하는 기본 단위이며, 변수와 메소드(Method)로 이루어집니다. 자세한 것은 뒤에서 다루도록 하겠습니다.
 
-# `Main()` 메소드
+# 'Main()' 메소드
 
 `static void Main(string[] args)`는 프로그램의 진입점(Entry Point)입니다. 프로그램이 실행되면 가장 먼저 실행되는 메소드입니다. `Main()` 메소드가 종료되면 프로그램도 종료됩니다.  
 `string[] args`는 매개 변수(Parameter)입니다. `HelloWorld.exe 이규혁`으로 프로그램을 실행하면, `이규혁`이 `args`에 들어가게 됩니다.
