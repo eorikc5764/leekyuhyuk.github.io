@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
 
+<head>
   {%- include head.html -%}
+</head>
 
-  <body>
+<body>
+  <main class="container">
+    <section class="about">
+      <a href="/"><img class="profile" src="{{ "/assets/profile.jpg" | relative_url }}"
+          alt="{{ site.plainwhite.name }}"></a>
+      <h2 id="title">
+        <a href="/">{{ site.plainwhite.name }}</a>
+      </h2>
+      <p class="tagline">{{ site.plainwhite.tagline }}</p>
+      <a href="mailto:lee@kyuhyuk.kr">lee@kyuhyuk.kr</a>
+      <p>&copy;
+        {{ "now" | date: "%Y" }}</p>
+    </section>
+    <section class="content">
+      {{ content }}
+    </section>
+  </main>
+  {%- if site.plainwhite.analytics_id -%}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-  </body>
+    gtag('config', '{{ site.plainwhite.analytics_id }}');
+  </script>
+  {%- endif -%}
+</body>
 
 </html>

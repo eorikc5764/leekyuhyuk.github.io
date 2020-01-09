@@ -1,45 +1,23 @@
 title: KyuDevelop
 author: KyuHyuk Lee
 email: lee@kyuhyuk.kr
-description: > # this means to ignore newlines until "show_excerpts:"
-#  생활에서 불편하거나 필요한 것을 만들거나 해결하는 것을 좋아합니다.
-#  이러한 활동으로 성취감을 느끼고 더 좋은 품질의 소프트웨어를 개발하기 위하여 실력을 쌓아가고 있습니다.
-#  전문적인 소프트웨어 개발자가 되어 많은 사람들에게 편한 삶을 안겨주는 게 제 꿈입니다.
-permalink: /article/:categories/:year/:month/:day/:title
-show_excerpts: false # set to true to show excerpts on the homepage
-google_analytics: UA-61796050-1
+description: > # this means to ignore newlines until "show_exerpts:"
+# Write an awesome description for your new site here. You can edit this
+# line in _config.yml. It will appear in your document head meta (for
+# Google search results) and in your feed.xml site description.
+show_excerpts: true # set to true to show excerpts on the homepage
+
 # Minima date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
-  date_format: "%Y년 %-m월 %-d일 %H시 %M분"
-
-  # generate social links in footer
-  social_links:
-    twitter: LeeKyuHyuk
-    github:  LeeKyuHyuk
-    rss: rss
-    # dribbble: jekyll
-    # facebook: jekyll
-    # flickr:   jekyll
-    instagram: LeeKyuHyuk.Korea
-    linkedin: leekyuhyuk
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
-
-    # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+sass:
+  sass_dir: _sass
+plainwhite:
+  name: KyuHyuk Lee
+  tagline: Software Developer
+  date_format: "%b %-d, %Y"
+  sitemap: true # set to true to generate sitemap.xml content
 
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
- - jemoji
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jemoji
