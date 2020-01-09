@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Nanum+Gothic+Coding&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+KR|Nanum+Gothic+Coding&display=swap");
 @import "ext/normalize";
 @import "syntax";
 
@@ -261,34 +261,62 @@ main {
 /**
  * Code formatting
  */
- pre,
- code {
-   font-family: "Nanum Gothic Coding";
-   border: 1px solid #f4f4f4;
-   border-radius: 3px;
-   background-color: #f4f4f4;
- }
- 
- code {
-   padding: 1px 5px;
- }
- 
- pre {
-   padding: 8px 12px;
-   overflow-x: auto;
- 
-   > code {
-     border: 0;
-     padding-right: 0;
-     padding-left: 0;
-   }
- }
- 
- .highlight {
-   border-radius: 3px;
-   background: #f4f4f4;
- 
-   .highlighter-rouge & {
-     background: #f4f4f4;
-   }
- }
+pre,
+code {
+  font-family: "Nanum Gothic Coding";
+  border: 1px solid #f4f4f4;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  background: #f4f4f4;
+
+  .highlighter-rouge & {
+    background: #f4f4f4;
+  }
+}
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  color: lighten(#111, 18%);
+  border-collapse: collapse;
+  border: 1px solid lighten(#828282, 40%);
+  tr {
+    &:nth-child(even) {
+      background-color: lighten(#828282, 46%);
+    }
+  }
+  th,
+  td {
+    padding: (30px / 3) (30px / 2);
+  }
+  th {
+    background-color: lighten(#828282, 43%);
+    border: 1px solid lighten(#828282, 36%);
+  }
+  td {
+    border: 1px solid lighten(#828282, 40%);
+  }
+}
