@@ -320,3 +320,16 @@ table {
     border: 1px solid lighten(#828282, 40%);
   }
 }
+
+/**
+ * Blockquote
+ */
+blockquote {
+  padding: 0 0 0px 15px;
+  margin: 0 0 0 -17px;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #828282;
+  border-left: 3px solid #615b5b;
+}
