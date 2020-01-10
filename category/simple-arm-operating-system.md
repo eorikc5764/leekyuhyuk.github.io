@@ -1,5 +1,5 @@
 ---
-title: "Category : Spring Boot"
+title: "Category : Simple ARM Operating System"
 layout: default
 ---
 {%- if site.posts.size > 0 -%}
@@ -8,7 +8,7 @@ layout: default
     <h1 id="posts-label">{{ page.title }}</h1>
   </li>
 
-  {%- for post in site.categories.Spring-Boot -%}
+  {%- for post in site.categories.Simple-ARM-Operating-System -%}
   <li>
     {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
     <a class="post-link" href="{{ post.url | relative_url }}">

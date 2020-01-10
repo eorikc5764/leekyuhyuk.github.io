@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{%- if site.posts.size > 0 -%}
+<ul class="posts">
+    <li>
+        <h1 id="posts-label">Categories</h1>
+    </li>
+    <ul class="post-categories">
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+        <li>
+            <a class="category"
+                href="/category/{{ category | first | slugify | prepend: site.baseurl }}.html">{{ category[0] | replace:'-', ' ' }} <b>({{ category | last | size }})</b></a>
+        </li>
+        {% endfor %}
+    </ul>
+</ul>
+
+<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}

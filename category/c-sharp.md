@@ -1,16 +1,38 @@
 ---
+title: "Category : C Sharp"
 layout: default
 ---
-<h1 class="page-heading">Categorie: C Sharp</h1>
-<ul class="post-list">
+{%- if site.posts.size > 0 -%}
+<ul class="posts">
+  <li>
+    <h1 id="posts-label">{{ page.title }}</h1>
+  </li>
+
   {%- for post in site.categories.C-Sharp -%}
-    <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  <li>
+    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+    <a class="post-link" href="{{ post.url | relative_url }}">
+      <h2 class="post-title">{{ post.title | escape }}</h2>
+    </a>
+    <div class="post-meta">
+      <ul class="post-categories">
+        <li>
+          <a class="category" href="/category/{{ post.category | slugify | prepend: site.baseurl }}.html">{{ post.category | replace:'-', ' ' }}</a>
+        </li>
+      </ul>
+      <div class="post-date">
+        {{ post.date | date: date_format }}</div>
+    </div>
+    <div class="post">
       {%- if site.show_excerpts -%}
-        {% if post.excerpt %}{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endif %}
+      {% if post.excerpt %}{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endif %}
       {%- endif -%}
-    </li>
+    </div>
+  </li>
   {%- endfor -%}
 </ul>
+
+<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}
