@@ -232,6 +232,68 @@ Hello, KyuHyuk Lee(28).
 Hello, JungWon Byeon(31).
 ```
 
+# `apply` 메소드
+
+`call`은 매개변수를 직접 받지만, `apply`는 매개변수를 배열로 받습니다.
+
+```javascript
+let kyuhyuk = { name : "KyuHyuk Lee" };
+let jungwon = { name : "JungWon Byeon" };
+
+function update(age, nickname) {
+  this.age = age;
+  this.nickname = nickname;
+}
+
+function hello() {
+  return `Hello, ${this.name}(${this.nickname}/${this.age}).`;
+}
+
+update.apply(kyuhyuk, [28, "0xE34BC"]);
+update.apply(jungwon, [31, "Byeonini"]);
+
+console.log(hello.call(kyuhyuk));
+console.log(hello.call(jungwon));
+```
+
+**출력 :**
+```
+Hello, KyuHyuk Lee(0xE34BC/28).
+Hello, JungWon Byeon(Byeonini/31).
+```
+
+# `bind` 메소드
+
+`bind`를 사용하면 함수의 this 값을 영구히 바꿀 수 있습니다.
+
+```javascript
+let kyuhyuk = { name : "KyuHyuk Lee" };
+let jungwon = { name : "JungWon Byeon" };
+
+function update(age) {
+  this.age = age;
+}
+
+function hello() {
+  return `Hello, ${this.name}(${this.age}).`;
+}
+
+let updateKyuHyuk = update.bind(kyuhyuk);
+let updateJungwon = update.bind(jungwon);
+
+updateKyuHyuk(28);
+updateJungwon(31);
+
+console.log(hello.call(kyuhyuk));
+console.log(hello.call(jungwon));
+```
+
+**출력 :**
+```
+Hello, KyuHyuk Lee(28).
+Hello, JungWon Byeon(31).
+```
+
 # 익명 함수 (Anonymous Function)
 
 익명 함수에서는 함수에 식별자가 주어지지 않습니다. 함수 이름을 생략할 수 있다는 점을 제외하면 일반적인 함수 선언과 같습니다.
