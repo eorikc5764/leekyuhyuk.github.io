@@ -294,6 +294,37 @@ Hello, KyuHyuk Lee(28).
 Hello, JungWon Byeon(31).
 ```
 
+만약 `update()`에서 국적은 "South Korea"로 고정하지만, 나이는 자유롭게 바꿀 수 있게 바꾸고 싶다면 아래와 같이 작성하면 됩니다.
+
+```javascript
+let kyuhyuk = { name : "KyuHyuk Lee" };
+let jungwon = { name : "JungWon Byeon" };
+
+function update(nationality, age) {
+  this.nationality = nationality;
+  this.age = age;
+}
+
+function hello() {
+  return `${this.name}(${this.age}) - ${this.nationality}.`;
+}
+
+let updateKyuHyuk = update.bind(kyuhyuk, "South Korea");
+let updateJungwon = update.bind(jungwon, "South Korea");
+
+updateKyuHyuk(28);
+updateJungwon(31);
+
+console.log(hello.call(kyuhyuk));
+console.log(hello.call(jungwon));
+```
+
+**출력 :**
+```
+KyuHyuk Lee(28) - South Korea.
+JungWon Byeon(31) - South Korea.
+```
+
 # 익명 함수 (Anonymous Function)
 
 익명 함수에서는 함수에 식별자가 주어지지 않습니다. 함수 이름을 생략할 수 있다는 점을 제외하면 일반적인 함수 선언과 같습니다.
