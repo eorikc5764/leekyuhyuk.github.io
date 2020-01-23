@@ -4,6 +4,7 @@ title   : "[ES6] Scope와 Hoisting"
 date    : 2020-01-18 18:01:31 +0900
 category: JavaScript
 ---
+
 # Scope
 
 자바스크립트에서 객체와 함수도 변수입니다. Scope(범위)는 코드의 다른 부분에서 변수, 객체 및 함수의 접근성을 결정합니다.
