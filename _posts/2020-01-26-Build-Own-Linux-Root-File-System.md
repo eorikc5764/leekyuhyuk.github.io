@@ -9,7 +9,7 @@ category: Raspberry-Pi
 
 # Root File System Build
 
-아래는 제가 작성한 Root File System을 빌드하는 스크립트입니다. `root-file-system.sh`로 아래 내용을 저장한 뒤, 실행하면 Toolchain이 빌드 됩니다. 빌드 시간은 대략 3~5분 정도 소요됩니다.
+아래는 제가 작성한 Root File System을 빌드하는 스크립트입니다. `root-file-system.sh`로 아래 내용을 저장한 뒤, 실행하면 Root File System이 빌드 됩니다. 빌드 시간은 대략 3~5분 정도 소요됩니다.
 
 빌드 과정은 크게 9개의 단계로 나누어져 있습니다:
 
@@ -32,7 +32,7 @@ category: Raspberry-Pi
 ```bash
 #!/bin/bash
 #
-# PiCLFS system build script
+# PiCLFS root file system build script
 # Optional parameteres below:
 set -o nounset
 set -o errexit
@@ -1084,6 +1084,6 @@ success "\nTotal root file system build time: $(timer $total_build_time)\n"
 
 빌드에 성공하면 아래와 같은 화면이 출력됩니다.
 
-![Toolchain Build]({{ site.url }}/assets/image/2020-01-26-Build-Own-Linux-Root-File-System/2020-01-26-Build-Own-Linux-Root-File-System_1.png)
+![Root File System Build]({{ site.url }}/assets/image/2020-01-26-Build-Own-Linux-Root-File-System/2020-01-26-Build-Own-Linux-Root-File-System_1.png)
 
 [다음 글]({{ site.url }}/article/raspberry-pi/2020/01/26/Build-Own-Linux-Kernel)에서는 Raspberry Pi의 커널을 크로스 컴파일하여 빌드 해봅시다.
