@@ -57,7 +57,7 @@ npm init
   "author": "KyuHyuk Lee",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^8.0.0",
+    "electron": "^8.0.0"
   }
 }
 ```
