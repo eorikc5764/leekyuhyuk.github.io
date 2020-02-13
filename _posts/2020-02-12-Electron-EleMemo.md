@@ -173,9 +173,7 @@ listMemo();
         <template id="card-template">
             <div class="card">
                 <div class="container">
-                    <h4><b>
-                            <p class="date">2020-01-01</p>
-                        </b></h4>
+                    <h4><b><p class="date">2020-01-01</p></b></h4>
                     <p class="contents">Elememo</p>
                 </div>
             </div>
