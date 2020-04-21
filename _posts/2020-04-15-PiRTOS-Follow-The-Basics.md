@@ -64,11 +64,11 @@ ARM 모드 간을 전환하려면 `kernel.img` 파일의 이름을 변경해야 
 이제 `boot.S` 파일을 컴파일 해봅시다.
 
 ```sh
-$ arm-none-eabi-as -march=armv7-a -mcpu=arm1176jzf-s -o boot.o boot.S
+$ arm-none-eabi-as -march=armv6zk -mcpu=arm1176jzf-s -o boot.o boot.S
 $ arm-none-eabi-objcopy -O binary boot.o boot.bin
 ```
 
-첫 번째 명령어는 `arm-none-eabi-as`를 사용하여 어셈블리어 소스 코드를 컴파일 하는 명령입니다. Raspberry Pi 2가 사용하는 ARM Core가 'arm1176jzf-s'이라서 아키텍처는 'armv7-a'로 설정하고, CPU는 'arm1176jzf-s'로 설정했습니다. 컴파일이 완료되면 `boot.o`라는 오브젝트 파일이 생성되고, 두 번째 명령어인 `arm-none-eabi-objcopy` 명령으로 바이너리만 추출합니다.
+첫 번째 명령어는 `arm-none-eabi-as`를 사용하여 어셈블리어 소스 코드를 컴파일 하는 명령입니다. Raspberry Pi Zero가 사용하는 ARM Core가 'arm1176jzf-s'이라서 아키텍처는 'armv6zk'로 설정하고, CPU는 'arm1176jzf-s'로 설정했습니다. 컴파일이 완료되면 `boot.o`라는 오브젝트 파일이 생성되고, 두 번째 명령어인 `arm-none-eabi-objcopy` 명령으로 바이너리만 추출합니다.
 
 이제 `hexdump` 명령으로 `boot.bin` 바이너리의 내용을 확인해봅시다.
 
@@ -163,6 +163,7 @@ $ qemu-system-arm -M raspi2 -kernel pirtos.elf -S -gdb tcp::8080,ipv4
 ```
 
 - `-M` : ARM Machine을 지정합니다. 여기서는 Raspberry Pi 2를 지정했습니다.
+  - Raspberry Pi Zero 향으로 PiRTOS를 만드는데 왜 Raspberry Pi 2로 지정한 이유는 Raspberry Pi Zero와 Kernel이 올라가는 메모리 위치나 레지스터의 정보들이 둘이 유사하기 때문입니다.
 - `-kernel` : 커널로 로드될 ELF 파일을 지정합니다.
 - `-S` : QEMU가 실행되자마자 바로 일시정지 되도록 합니다.
 - `-gdb tcp::8080,ipv4` : GDB와 연결하기 위해 소켓 포트를 `8080`으로 설정합니다.
@@ -210,7 +211,7 @@ $ arm-none-eabi-gdb
 위의 소스코드는 `R0` 레지스터에 `1`을 넣고, `R1` 레지스터에 `2`를 넣습니다. 그리고 `R0`과 `R1` 레지스터의 값을 더한 것을 `R2` 레지스터에 넣는 간단한 소스코드입니다.  
 
 ```sh
-$ arm-none-eabi-as -march=armv7-a -mcpu=arm1176jzf-s -g -o boot.o boot.S
+$ arm-none-eabi-as -march=armv6zk -mcpu=arm1176jzf-s -g -o boot.o boot.S
 $ arm-none-eabi-ld -n -T pirtos.ld -nostdlib -o pirtos.elf boot.o
 ```
 
@@ -353,7 +354,7 @@ cpsr           0x400001d3	1073742291
 아래의 내용을 `Makefile`로 저장합니다.
 
 ```makefile
-ARCH = armv7-a
+ARCH = armv6zk
 MCPU = arm1176jzf-s
 
 CC = arm-none-eabi-gcc
