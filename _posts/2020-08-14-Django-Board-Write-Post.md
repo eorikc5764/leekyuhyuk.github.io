@@ -39,7 +39,7 @@ C:\Users\leekyuhyuk\Board>venv\Scripts\activate
 위와 같이 `(venv)`(가상환경 이름)이 앞에 출력되면 진입된 것입니다.  
 만약, 가상환경에서 벗어나려면 `deactivate` 명령을 실행하면 됩니다.
 
-**사실 위와 같이 '명령 프롬프트'에서 가상환경을 설정하는 방법보다 더 쉬운 방법이 있습니다.**  
+**위와 같이 '명령 프롬프트'에서 가상환경을 설정하는 방법보다 더 쉬운 방법이 있습니다.**  
 **'PyCharm'을 사용하면 간단하게 할 수 있습니다.**
 
 'PyCharm'에서 'New Project'를 클릭합니다.  
@@ -201,7 +201,7 @@ STATICFILES_DIRS = [
 `Board` 폴더에 `templates` 폴더를 만들고, `list.html` 파일을 아래와 같이 만듭니다.
 
 ```html
-{% load static %}
+{% raw %}{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -259,7 +259,7 @@ STATICFILES_DIRS = [
 </div>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
-</html>
+</html>{% endraw %}
 ```
 
 `Board/Board`에 있는 `settings.py`에 `TEMPLATE_DIR`를 추가하여 `templates` 폴더와 연결합니다.
@@ -312,7 +312,7 @@ def index(request):
 '글쓰기' 버튼을 누르면, `/post`로 이동이 됩니다. 글쓰기 Template도 아래와 같이 작성해봅시다. 파일명은 `post.html`으로 `templates` 폴더에 저장합니다.
 
 ```html
-{% load static %}
+{% raw %}{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -361,7 +361,7 @@ def index(request):
 </div>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
-</html>
+</html>{% endraw %}
 ```
 
 `board_app`의 `views.py`에 `post()` 함수를 추가합니다.
@@ -426,7 +426,7 @@ class Board(models.Model):
 ![Database Tables]({{ site.url }}/assets/image/2020-08-14-Django-Board-Write-Post/2020-08-14-Django-Board-Write-Post_13.png)
 
 'board_app_board'라는 테이블이 존재한다면, 성공적으로 테이블이 생성된 것입니다.  
-데이터베이스에 생성되는 테이블의 이름은 '<프로젝트 이름>_<모델 이름>' 규칙으로 생성됩니다.  
+데이터베이스에 생성되는 테이블의 이름은 '[프로젝트 이름]_[모델 이름]' 규칙으로 생성됩니다.  
 'board_app_board'는 'board_app' 프로젝트에 있는 'board' 모델의 테이블이라고 해석하면 됩니다.
 
 `PRAGMA table_info(board_app_board);` 명령어로 우리가 설정한 필드들이 잘 설정되었는지 확인해봅시다.  
@@ -444,7 +444,7 @@ class Board(models.Model):
 `post.html`을 보면 아래와 같이 되어있습니다.
 
 ```html
-<div class="container">
+{% raw %}<div class="container">
     <form action="/post" method="post">
         {% csrf_token %}
         <div class="form-group row">
@@ -472,7 +472,7 @@ class Board(models.Model):
             </div>
         </div>
     </form>
-</div>
+</div>{% endraw %}
 ```
 
 `<form>` 태그를 보면, 아래의 `/post`로 POST 방식을 통하여 `<input>`에 있는 내용을 전달하게 되어있습니다.  
@@ -500,7 +500,7 @@ def post(request):
 ```
 
 `post()` 함수에 'POST' 요청이 들어오면 실행할 코드를 넣어주었습니다.  
-`request.POST[]`에는 `<input>`에 있는 `name` 속성의 값을 넣어 변수에 입력한 내용의 값이 저장되도록 하였습니다.  
+`request.POST[]`에는 `<input>`에 있는 `name` 속성의 값을 넣어, 변수에 입력한 내용의 값이 저장되도록 하였습니다.  
 `python manage.py runserver 8080`를 실행시켜 '글쓰기' 버튼을 눌러 글을 하나 작성해봅시다.
 테이블에 데이터가 생성되었는지 확인하기 위해 `python manage.py dbshell` 명령어를 통하여 데이터베이스에 접근합니다. 그리고, `SELECT * FROM board_app_board;` 명령어로 `board_app_board`의 내용을 확인합니다. 아래와 같이 잘 저장된 것을 확인할 수 있습니다.  
 ![Database Check]({{ site.url }}/assets/image/2020-08-14-Django-Board-Write-Post/2020-08-14-Django-Board-Write-Post_15.png)
@@ -585,7 +585,7 @@ def post(request):
 이렇게 전달한 데이터는 `list.html`에서 받아 출력하게 되는데, 출력하는 부분은 아래와 같습니다.
 
 ```html
-{% for board in boards %}
+{% raw %}{% for board in boards %}
 <tr class="text-center">
    <th scope="row">
        <span>{{ board.id }}</span>
@@ -602,12 +602,13 @@ def post(request):
        <span>{{ board.created_date | date:"Y-m-d h:i" }}</span>
    </td>
 </tr>
-{% endfor %}
+{% endfor %}{% endraw %}
 ```
 
-`{% for board in boards %}`를 통해 `boards` 키의 요소를 `board` 변수로 가져옵니다. (Python에서 사용한 `for` 반복문과 같습니다.)  
-그리고 `{{ board.id }}`, `{{ board.title }}`, `{{ board.author }}`로 `board` 변수에서 `id`, `title`, `author` 값에 접근하여 출력합니다.  
-> `{{ board.created_date | date:"Y-m-d h:i" }}`은 `datetime` 타입의 데이터(`created_date`)를 `date:"Y-m-d h:i"` 형식에 맞추어 출력해 줍니다.
+`{% raw %}{% for board in boards %}{% endraw %}`를 통해 `boards` 키의 요소를 `board` 변수로 가져옵니다. (Python에서 사용한 `for` 반복문과 같습니다.)  
+그리고 `{% raw %}{{ board.id }}{% endraw %}`, `{% raw %}{{ board.title }}{% endraw %}`, `{% raw %}{{ board.author }}{% endraw %}`로 `board` 변수에서 `id`, `title`, `author` 값에 접근하여 출력합니다.  
+> `{% raw %}{{ board.created_date | date:"Y-m-d h:i" }}{% endraw %}`은 `datetime` 타입의 데이터(`created_date`)를 `date:"Y-m-d h:i"` 형식에 맞추어 출력해 줍니다.  
+> [https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#date](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#date)를 참고해주세요.
 
 `python manage.py runserver 8080`를 실행시켜 아래와 같이 목록이 잘 출력되는지 확인합니다.  
 ![Board List]({{ site.url }}/assets/image/2020-08-14-Django-Board-Write-Post/2020-08-14-Django-Board-Write-Post_17.png)
