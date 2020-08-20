@@ -43,7 +43,7 @@ category: Python
             <a class="btn btn-info" href="/post/edit/{{ board.id }}" role="button">수정</a>
         </div>
         <div class="col-auto">
-            <form id="delete-form" action="/post/{{ board.id }}" method="post">
+            <form id="delete-form" action="/post/delete/{{ board.id }}" method="post">
                 <input type="hidden" name="_method" value="delete"/>
                 <button id="delete-btn" type="submit" class="btn btn-danger">삭제</button>
             </form>
@@ -119,3 +119,5 @@ def detail(request, id):
 
 `python manage.py runserver 8080`를 실행시켜 아래와 같이 글이 잘 출력되는지 확인합니다.  
 ![Detail View]({{ site.url }}/assets/image/2020-08-15-Django-Board-Post-View/2020-08-15-Django-Board-Post-View_1.png)
+
+**Source Code :** [github.com/LeeKyuHyuk/Django-Board-Example](https://github.com/LeeKyuHyuk/Django-Board-Example/tree/043ce77511d3f004f24f27c2a101cd85993e7093)
