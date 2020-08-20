@@ -612,3 +612,5 @@ def post(request):
 
 `python manage.py runserver 8080`를 실행시켜 아래와 같이 목록이 잘 출력되는지 확인합니다.  
 ![Board List]({{ site.url }}/assets/image/2020-08-14-Django-Board-Write-Post/2020-08-14-Django-Board-Write-Post_17.png)
+
+**Source Code :** [github.com/LeeKyuHyuk/Django-Board-Example](https://github.com/LeeKyuHyuk/Django-Board-Example/tree/ac52195cc570091d601904a09c444548e58eac66)
