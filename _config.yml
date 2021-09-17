@@ -1,3 +1,4 @@
+url: https://kyuhyuk.kr
 title: KyuDevelop
 author: KyuHyuk Lee
 email: lee@kyuhyuk.kr
@@ -16,10 +17,5 @@ sass:
 plainwhite:
   name: KyuHyuk Lee
   tagline: Software Developer
-  date_format: "%b %-d, %Y"
+  date_format: "%Y년 %m월 %d일 %H시 %M분 %S초"
   sitemap: true # set to true to generate sitemap.xml content
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-feed
-  - jemoji

@@ -2,13 +2,16 @@
 title: "Category : File System"
 layout: default
 ---
+
 {%- if site.posts.size > 0 -%}
+
 <ul class="posts">
   <li>
     <h1 id="posts-label">{{ page.title }}</h1>
   </li>
 
-  {%- for post in site.categories.File-System -%}
+{%- for post in site.categories.File-System -%}
+
   <li>
     {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
     <a class="post-link" href="{{ post.url | relative_url }}">
@@ -31,8 +34,4 @@ layout: default
   </li>
   {%- endfor -%}
 </ul>
-
-<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
-		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
 {%- endif -%}

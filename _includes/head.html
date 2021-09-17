@@ -1,16 +1,60 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="naver-site-verification" content="7d31daa60bc92492703dc048c128214bc4373126" />
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-<script>
-  window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics }}');
-</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="KyuHyuk Lee" />
 <title>{{ page.title | default: site.title }}</title>
-{% seo %}
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="{{ site.url }}/feed.xml"
+  title="{{ site.title }} Feed"
+/>
+<!-- Bootstrap core CSS -->
+<link href="{{ "/assets/css/bootstrap.min.css" | relative_url }}"
+rel="stylesheet"
+integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+crossorigin="anonymous" />
+<!-- Google Fonts - Noto Serif KR -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Serif+KR&display=swap"
+  rel="stylesheet"
+/>
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="{{ "/assets/favicons/apple-touch-icon.png" |
+relative_url }}" /> <link rel="apple-touch-icon" sizes="57x57" href="{{
+"/assets/favicons/apple-touch-icon-57x57.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="72x72" href="{{
+"/assets/favicons/apple-touch-icon-72x72.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="76x76" href="{{
+"/assets/favicons/apple-touch-icon-76x76.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="114x114" href="{{
+"/assets/favicons/apple-touch-icon-114x114.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="120x120" href="{{
+"/assets/favicons/apple-touch-icon-120x120.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="144x144" href="{{
+"/assets/favicons/apple-touch-icon-144x144.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="152x152" href="{{
+"/assets/favicons/apple-touch-icon-152x152.png" | relative_url }}" /> <link
+rel="apple-touch-icon" sizes="180x180" href="{{
+"/assets/favicons/apple-touch-icon-180x180.png" | relative_url }}" /> <link
+rel="icon" href="{{ "/assets/favicons/favicon.ico" | relative_url }}" /> <link
+rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+></script>
+<script>
+  window["ga-disable-{{ site.google_analytics }}"] =
+    window.doNotTrack === "1" ||
+    navigator.doNotTrack === "1" ||
+    navigator.doNotTrack === "yes" ||
+    navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "{{ site.google_analytics }}");
+</script>
