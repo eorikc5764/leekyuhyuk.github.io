@@ -116,12 +116,12 @@ export class AppModule {}
 **`src/main.ts` :**
 
 ```typescript
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  await app.listen(8080);
 }
 bootstrap();
 ```
@@ -131,7 +131,7 @@ bootstrap();
 아마 위의 코드를 모두 작성하고 `npm run start:dev`를 하면 `UnhandledPromiseRejectionWarning: Error: Apollo Server requires either an existing schema, modules or typeDefs`라고 오류가 발생할 것입니다.
 
 이 오류가 발생하는 이유는 Resolver, Schema가 없어서 발생하는 오류입니다.  
-여기서 말하는 Resolver는 GraphQL 작업(Query, Mutation, Subscription)을 데이터로 변환하기 위해 사용됩니다.  
+여기서 말하는 Resolver는 GraphQL 작업(Query, Mutation, Subscription)을 데이터로 변환하기 위해 사용됩니다.
 
 Schema는 아래와 같이 정의할 수 있습니다. 간단하게 주소록에 필요한 Schema를 작성해보겠습니다.
 
@@ -231,7 +231,7 @@ import { PersonModule } from "./models/person.module";
 export class AppModule {}
 ```
 
-`npm run start:dev`를 실행하고 [http://localhost:3000/graphql](http://localhost:3000/graphql)에 접속합니다.  
+`npm run start:dev`를 실행하고 [http://localhost:8080/graphql](http://localhost:8080/graphql)에 접속합니다.  
 GraphQL Playground가 브라우저에 출력되면, 아래와 같이 입력하여 실행해봅니다.
 
 우리가 의도한 대로 동작하는 것을 확인할 수 있습니다.  
@@ -396,7 +396,7 @@ export class PersonResolver {
 }
 ```
 
-켜져 있는 NestJS 서버를 중단하고, `npm run start:dev`를 다시 실행한 뒤 [http://localhost:3000/graphql](http://localhost:3000/graphql)에 접속합니다.
+켜져 있는 NestJS 서버를 중단하고, `npm run start:dev`를 다시 실행한 뒤 [http://localhost:8080/graphql](http://localhost:8080/graphql)에 접속합니다.
 
 Query를 요청하면, 아래와 같이 MongoDB에 있는 데이터가 정상적으로 나오고 있음을 확인할 수 있습니다.  
 ![GraphQL Playground]({{ site.url }}/assets/image/2021-09-16-Building-a-GraphQL-Server-with-NestJS/2021-09-16-Building-a-GraphQL-Server-with-NestJS_4.png)
@@ -525,7 +525,7 @@ export class PersonResolver {
 }
 ```
 
-켜져 있는 NestJS 서버를 중단하고, `npm run start:dev`를 다시 실행한 뒤 [http://localhost:3000/graphql](http://localhost:3000/graphql)에 접속합니다.
+켜져 있는 NestJS 서버를 중단하고, `npm run start:dev`를 다시 실행한 뒤 [http://localhost:8080/graphql](http://localhost:8080/graphql)에 접속합니다.
 
 Mutation을 요청하면, 아래와 같이 MongoDB에 정상적으로 데이터가 삽입된 것을 확인할 수 있습니다.  
 ![GraphQL Playground]({{ site.url }}/assets/image/2021-09-16-Building-a-GraphQL-Server-with-NestJS/2021-09-16-Building-a-GraphQL-Server-with-NestJS_5.png)  
