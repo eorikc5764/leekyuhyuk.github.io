@@ -175,7 +175,7 @@ code {
     min-width: 70%;
     width: fit-content;
     background: #f4f4f4;
-    margin-bottom: 0px;
+    margin-bottom: 16px;
   }
 }
 table {
@@ -350,14 +350,14 @@ body {
       background-position: center center;
       background-size: 21px 21px;
       margin-top: -48px;
-      margin-right: 0px;
+      margin-right: -10px;
       cursor: pointer;
     }
     #mobile-navigation-toggle:hover {
       text-decoration: underline;
     }
     header h1 a {
-      margin-right: 16px;
+      margin-right: 24px;
       text-decoration: none;
       &:link {
         color: #000000;
