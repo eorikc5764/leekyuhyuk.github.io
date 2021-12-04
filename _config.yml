@@ -1,21 +1,17 @@
-url: https://kyuhyuk.kr
+# url: https://kyuhyuk.kr
 title: KyuDevelop
 author: KyuHyuk Lee
 email: lee@kyuhyuk.kr
-description: > # this means to ignore newlines until "show_exerpts:"
-# Write an awesome description for your new site here. You can edit this
-# line in _config.yml. It will appear in your document head meta (for
-# Google search results) and in your feed.xml site description.
+description: 소프트웨어 개발을 즐기는<br>이규혁의 블로그입니다.
 permalink: /article/:categories/:year/:month/:day/:title
 show_excerpts: true # set to true to show excerpts on the homepage
 google_analytics: UA-61796050-1
+github_username: LeeKyuHyuk
+generator: KyuHyuk Lee
 
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-sass:
-  sass_dir: _sass
-plainwhite:
-  name: KyuHyuk Lee
-  tagline: Software Developer
-  date_format: "%Y년 %m월 %d일 %H시 %M분 %S초"
-  sitemap: true # set to true to generate sitemap.xml content
+# Build settings
+markdown: kramdown
+
+# Plugins
+gems:
+  - jekyll-sitemap
