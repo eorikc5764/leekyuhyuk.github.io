@@ -1,5 +1,7 @@
 .highlight {
   background: #ffffff;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 .highlight .c {
   color: #999988;

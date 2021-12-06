@@ -282,7 +282,7 @@ h6 {
 }
 
 p {
-  margin-bottom: 1.6em;
+  margin-bottom: 0.6em;
 }
 
 b,
@@ -2945,7 +2945,6 @@ p > video {
     line-height: normal;
   }
 
-  p,
   address,
   pre,
   hr,
@@ -3577,7 +3576,6 @@ p > video {
     line-height: normal;
   }
 
-  p,
   address,
   pre,
   hr,
@@ -4169,7 +4167,6 @@ p > video {
     line-height: 1.6;
   }
 
-  p,
   address,
   pre,
   hr,
@@ -4846,7 +4843,6 @@ p > video {
     line-height: normal;
   }
 
-  p,
   address,
   pre,
   hr,
@@ -5387,7 +5383,6 @@ p > video {
     line-height: normal;
   }
 
-  p,
   address,
   pre,
   hr,

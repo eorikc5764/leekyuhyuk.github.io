@@ -14,6 +14,11 @@
     </div>
     {% include footer.html %}
   </div>
+  <!--[if lt IE 9]>
+  <script src="{{ "/assets/javascript/html5.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+  <![endif]-->
+  <script type='text/javascript' src="{{ "/assets/javascript/jquery/jquery.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+  <script type='text/javascript' src="{{ "/assets/javascript/jquery/jquery-migrate.min.js" | prepend: site.baseurl | prepend: site.url }}"></script>
   <script type='text/javascript' src="{{ "/assets/javascript/skip-link-focus-fix.js" | prepend: site.baseurl | prepend: site.url }}"></script>
   <script type='text/javascript'>
   /* <![CDATA[ */
@@ -21,10 +26,10 @@
   /* ]]> */
   </script>
   <script type='text/javascript' src="{{ "/assets/javascript/functions.js" | prepend: site.baseurl | prepend: site.url }}"></script>
-  {%- if site.plainwhite.analytics_id -%}
+  {%- if site.google_analytics -%}
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"
+      src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -33,7 +38,7 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "{{ site.plainwhite.analytics_id }}");
+      gtag("config", "{{ site.google_analytics }}");
     </script>
   {%- endif -%}
 </body>
